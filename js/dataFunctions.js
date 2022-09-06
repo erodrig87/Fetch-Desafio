@@ -15,13 +15,14 @@ const readFormInput = () => {
 
     if(validado){
         nuevoGasto = new Gasto(fecha, categoria, valor,remito,pago,ID_GASTO_GLOBAL++);
+        nuevoGasto.convertToDolar();
         arrExpenses.push(nuevoGasto);
         document.getElementById("inputExpenseForm").reset();
         nuevoGasto.storeExpense();
         addRowTable(nuevoGasto);
         makeFilterCategory(arrExpenses);
         if(document.getElementById("alertMsg"))document.getElementById("alertMsg").remove();
-        
+        updateChart();
 
     } else { 
        /*nodoform = document.getElementById("inputExpenseForm");

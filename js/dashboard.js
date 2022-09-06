@@ -18,7 +18,7 @@ function randomColor() {
 
 /* globals Chart:false, feather:false */
 
-(() => {
+(updateChart = () => {
   'use strict'
 
   feather.replace({ 'aria-hidden': 'true' })

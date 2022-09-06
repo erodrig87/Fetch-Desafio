@@ -7,6 +7,7 @@ class Gasto {
         this.remito = remito;
         this.pago = pago;
         this.ID = `ID_GASTO_${ID}`;
+        this.enDolares = 0;
     }
     //metodo retorna nodo de celda de tabal segun parametro atributo
     returnNodoCeldaTabla(atributo) {
@@ -28,4 +29,7 @@ class Gasto {
         localStorage.setItem("arrExpensesStored", JSON.stringify(arrExpensesStored));
         localStorage.setItem("ID_GASTO_GLOBAL", JSON.stringify(ID_GASTO_GLOBAL));
     };
+    convertToDolar(){
+        this.enDolares = (this.valor/parseFloat(JSON.parse(localStorage.getItem("dolar_blue_buy_value")))).toFixed(2);
+    }
 }
